@@ -12,7 +12,25 @@ vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+local path_separator = package.config:sub(1, 1)
+local system_os
+if path_separator == "/" then
+    system_os  = "Unix"
+elseif path_separator == "\\" then
+    system_os = "Windows"
+end
+
+-- print(system_os)
+
+if system_os == "Unix" then
+    vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+    -- print("Set by Unix home dir")
+elseif system_os == "Windows" then
+    vim.opt.undodir = os.getenv("UserProfile") .. "\\.vim\\undodir"
+    -- print("Set by Windows home dir")
+    -- print(os.getenv("UserProfile") .. "\\.vim\\undodir")
+end
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
