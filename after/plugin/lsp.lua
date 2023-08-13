@@ -12,16 +12,48 @@ lsp.ensure_installed({
 	'rust_analyzer',
 })
 
+require'lspconfig'.lua_ls.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- recognize vim as global
+                globals = {'vim'}
+            }
+        }
+    }
+}
+
 local cmp = require('cmp')
-local cmp_select = {behaviour = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
- 
-	["C-Space>"] = cmp.mapping.complete(),
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+	    ['<CR>'] = cmp.mapping.confirm({select = false}),
+    }),
 })
 
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
-})
+
+
+--local cmp_select = {behaviour = cmp.SelectBehavior.Select}
+--local cmp_mappings = lsp.defaults.cmp_mappings({
+--    ['<C-s>'] = cmp.mapping.complete(),
+--	['<CR>'] = cmp.mapping.confirm({select = true}),
+--})
+--lsp.setup_nvim_cmp({
+--	mapping = cmp_mappings
+--})
+
+
+
+--cmp.setup({
+--    sources = {{name = 'nvim_lsp'}},
+--    mapping = cmp.mapping.preset.insert({
+--	    ["<C-Space>"] = cmp.mapping.complete(),
+--    }),
+--    snippet = {
+--        expand = function(args)
+--            require('luasnip').lsp_expand(args.body)
+--        end,
+--    },
+--})
 
 lsp.set_preferences({
   sign_icons = { }
