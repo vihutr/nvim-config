@@ -2,6 +2,12 @@ nvim v0.9.1
 
 nvim configs with Packer
 
+Dependencies for lsp/lint:
+gcc
+unzip
+npm
+python3
+
 How to use:
 Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
