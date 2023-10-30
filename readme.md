@@ -16,4 +16,4 @@ Windows PS cmd:<br>
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 ```
 
-`:so` packer.nvim and then `:PackerSync` until no more updates necessary.
+`:so` packer.lua and then `:PackerSync` until no more updates necessary.
