@@ -12,11 +12,11 @@ lsp.ensure_installed({
 	'rust_analyzer',
 })
 
+-- recognize vim as global
 require'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {
             diagnostics = {
-                -- recognize vim as global
                 globals = {'vim'}
             }
         }
