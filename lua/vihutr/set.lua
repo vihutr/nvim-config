@@ -1,6 +1,14 @@
 
 vim.opt.nu = true
+-- (same as nu)
+-- vim.opt.number = true 
 vim.opt.relativenumber = true
+
+-- vim.opt.showmode = false
+
+-- unnamedplus = shared clipboard
+-- current config has leader y for yanking to keyboard so not necessary
+-- vim.opt.clipboard = "unnamedplus"
 
 local indent_width = 4
 vim.opt.tabstop = indent_width
