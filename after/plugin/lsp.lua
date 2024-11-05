@@ -22,6 +22,17 @@ require'lspconfig'.lua_ls.setup {
         }
     }
 }
+require'lspconfig'.pylsp.setup{
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    ignore = {'W391', 'E501'}
+                }
+            }
+        }
+    }
+}
 
 local cmp = require('cmp')
 cmp.setup({
