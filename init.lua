@@ -1,2 +1,3 @@
 require("vihutr")
-vim.api.nvim_command('language english')
+--uncomment for windows
+--vim.api.nvim_command('language english')
