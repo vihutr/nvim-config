@@ -23,3 +23,4 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ```
 
 `:so` packer.lua and then `:PackerSync` until no more updates necessary.
+`:TSUpdateSync` and `TSUpdate` as appropriate as well.
