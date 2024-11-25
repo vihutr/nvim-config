@@ -1,2 +1,2 @@
 require("vihutr")
-vim.api.nvim_comman('language english')
+vim.api.nvim_command('language english')
