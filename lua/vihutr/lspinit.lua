@@ -1,15 +1,10 @@
-local lsp = require("lsp-zero")
-
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-    'clangd',
-    'pylsp',
-    'dockerls',
-	'tsserver',
-	'eslint',
-	'lua_ls',
-	'rust_analyzer',
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  },
 })
 
 -- recognize vim as global
@@ -41,8 +36,6 @@ cmp.setup({
     }),
 })
 
-
-
 --local cmp_select = {behaviour = cmp.SelectBehavior.Select}
 --local cmp_mappings = lsp.defaults.cmp_mappings({
 --    ['<C-s>'] = cmp.mapping.complete(),
@@ -51,8 +44,6 @@ cmp.setup({
 --lsp.setup_nvim_cmp({
 --	mapping = cmp_mappings
 --})
-
-
 
 --cmp.setup({
 --    sources = {{name = 'nvim_lsp'}},
@@ -66,15 +57,4 @@ cmp.setup({
 --    },
 --})
 
-lsp.set_preferences({
-  sign_icons = { }
-})
 
--- remaps only for current buffer; if there is an lsp use its buffer, otherwise do vim's default
-lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-end)
-
-lsp.setup()

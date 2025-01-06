@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 vim.keymap.set("n", "<leader>fv", vim.cmd.Ex)
 --vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
 
@@ -21,4 +18,11 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
+
+-- lazy
+local ok, lazy = pcall(require, "lazy")
+if not ok then
+	return
+end
+vim.keymap.set("n", "<leader>L", lazy.show, {} )
 
