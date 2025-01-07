@@ -2,7 +2,7 @@ return{
     {
         -- LSP Support
         -- Optional Language Server/Linter installer
-        {'williamboman/mason.nvim'},          
+        {'williamboman/mason.nvim'},
         {'williamboman/mason-lspconfig.nvim'},
         -- Required
         {'neovim/nvim-lspconfig'},
@@ -15,7 +15,6 @@ return{
         {'hrsh7th/cmp-nvim-lsp'},
         {'hrsh7th/nvim-cmp'},
         {'L3MON4D3/LuaSnip'},
-        
         -- config = function()
         --     -- keymaps
         -- end,
