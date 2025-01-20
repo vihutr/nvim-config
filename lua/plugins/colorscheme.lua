@@ -1,5 +1,4 @@
-local current = 'tokyonight'
-return {
+return{
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -10,5 +9,3 @@ return {
         end,
     },
 }
--- color = colors or "rose-pine/neovim"
--- vim.cmd.colorscheme(color)
