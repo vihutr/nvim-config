@@ -31,8 +31,14 @@ require'lspconfig'.pylsp.setup{
 
 local cmp = require('cmp')
 cmp.setup({
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+    },
     mapping = cmp.mapping.preset.insert({
-	    ['<CR>'] = cmp.mapping.confirm({select = false}),
+	    ['<CR>'] = cmp.mapping.confirm({select = false, behavior = cmp.ConfirmBehavior.Insert}),
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     }),
 })
 
