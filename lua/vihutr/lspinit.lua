@@ -23,7 +23,13 @@ require'lspconfig'.pylsp.setup{
             plugins = {
                 pycodestyle = {
                     ignore = {'W391', 'E501', 'E401', 'E231', 'E302', 'E303', 'E305', 'W292', 'W293'}
-                }
+                },
+                -- pylint = { enabled = true },
+                jedi_completion = { fuzzy = true },
+                yapf = { enabled = true },
+                pylsp_mypy = { enabled = true },
+                pyls_isort = { enabled = true },
+                black = { enabled = true },
             }
         }
     }
