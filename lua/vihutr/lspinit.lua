@@ -1,11 +1,11 @@
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  },
-})
+-- require('mason-lspconfig').setup({
+--   handlers = {
+--     function(server_name)
+--       require('lspconfig')[server_name].setup({})
+--     end,
+--   },
+-- })
 
 -- recognize vim as global
 require'lspconfig'.lua_ls.setup {

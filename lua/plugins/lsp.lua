@@ -3,7 +3,7 @@ return{
         -- LSP Support
         -- Optional Language Server/Linter installer
         {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
+        -- {'williamboman/mason-lspconfig.nvim'},
         -- Required
         {'neovim/nvim-lspconfig'},
         -- run = function()
